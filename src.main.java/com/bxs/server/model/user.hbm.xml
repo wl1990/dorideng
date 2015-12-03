@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+ <hibernate-mapping package="com.bxs.server.model" default-lazy="false">
+ 
+ <!--会员类  -->
+ 	<class name="User" table="user" dynamic-insert="true" dynamic-update="true">
+ 		<id name="id" type="java.lang.Integer">
+    			<column name="id"/>
+    			<!--Native主键生成方式会根据不同的底层数据库自动选择Identity、Sequence、Hilo主键生成方式  
+       特点：根据不同的底层数据库采用不同的主键生成方式。由于Hibernate会根据底层数据库采用不同的映射方式，因此便于程序移植，项目中如果用到多个数据库时，可以使用这种方式 -->
+				<generator class="native"></generator>
+    	</id>
+    	<property name="userName" type="java.lang.String">
+    		<column name="userName"/>
+    	</property>
+    	<property name="password" type="java.lang.String">
+    		<column name="password"/>
+    	</property>
+    	<property name="email" type="java.lang.String">
+    		<column name="email"/>
+    	</property>
+    	<property name="status" type="java.lang.String">
+    		<column name="status"/>
+    	</property>
+    	<property name="realName" type="java.lang.String">
+    		<column name="realName"/>
+    	</property>
+    	<property name="nickName" type="java.lang.String">
+    		<column name="nickName"/>
+    	</property>
+    	<property name="registrationTime" type="java.lang.String">
+    		<column name="registrationTime"/>
+    	</property>
+    	<property name="level" type="java.lang.String">
+    		<column name="level"/>
+    	</property>
+    	<property name="imageUrl" type="java.lang.String">
+    		<column name="imageUrl"/>
+    	</property>
+    	<property name="sex" type="java.lang.String">
+    		<column name="sex"/>
+    	</property>
+    	<property name="phone" type="java.lang.String">
+    		<column name="phone"/>
+    	</property>
+    	<property name="qq" type="java.lang.String">
+    		<column name="qq"/>
+    	</property>
+    	<property name="weibo" type="java.lang.String">
+    		<column name="weibo"/>
+    	</property>
+ 	</class>
+ 	
+ 	
+   
+ 	</hibernate-mapping>

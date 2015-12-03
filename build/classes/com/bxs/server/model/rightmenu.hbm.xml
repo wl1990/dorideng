@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+ <hibernate-mapping package="com.bxs.server.model" default-lazy="false">
+ 
+ 
+ 	
+ 	<!-- 菜单 -->
+ 	 <class  name="RightMenu" table="rightMenu" dynamic-insert="true" dynamic-update="true">
+ 		<id name="id" column="id" type="java.lang.Integer">
+    			<!--Native主键生成方式会根据不同的底层数据库自动选择Identity、Sequence、Hilo主键生成方式  
+       特点：根据不同的底层数据库采用不同的主键生成方式。由于Hibernate会根据底层数据库采用不同的映射方式，因此便于程序移植，项目中如果用到多个数据库时，可以使用这种方式 -->
+				<generator class="native"></generator>
+				</id>
+    	<property name="selfId" type="java.lang.String">
+    		<column name="selfId"/>
+    	</property>
+    	<property name="parentId" type="java.lang.String">
+    		<column name="parentId"/>
+    	</property>
+    	<property name="menuName" type="java.lang.String">
+    		<column name="menuName"/>
+    	</property>
+    	<property name="menuUrl" type="java.lang.String">
+    		<column name="menuUrl"/>
+    	</property>
+    	<property name="imageUrl" type="java.lang.String">
+    		<column name="imageUrl"/>
+    	</property>
+    	<property name="menuType" type="java.lang.String">
+    		<column name="menuType"/>
+    	</property>
+    	<property name="menuMark" type="java.lang.String">
+    		<column name="menuMark"/>
+    	</property>
+ 	</class> 
+   
+ 	</hibernate-mapping>

@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+ <hibernate-mapping package="com.bxs.server.model" default-lazy="false">
+ 
+ <!--会员类  -->
+ 	<class name="User" table="user" dynamic-insert="true" dynamic-update="true">
+ 		<id name="id" type="java.lang.String">
+    			<column name="id"/>
+    			<generator class="assigned"></generator>
+    	</id>
+    	<property name="userName" type="java.lang.String">
+    		<column name="userName"/>
+    	</property>
+    	<property name="password" type="java.lang.String">
+    		<column name="password"/>
+    	</property>
+    	<property name="email" type="java.lang.String">
+    		<column name="email"/>
+    	</property>
+    	<property name="status" type="java.lang.String">
+    		<column name="status"/>
+    	</property>
+    	<property name="realName" type="java.lang.String">
+    		<column name="realName"/>
+    	</property>
+    	<property name="nickName" type="java.lang.String">
+    		<column name="nickName"/>
+    	</property>
+    	<property name="registrationTime" type="java.lang.String">
+    		<column name="registrationTime"/>
+    	</property>
+    	<property name="level" type="java.lang.String">
+    		<column name="level"/>
+    	</property>
+    	<property name="imageUrl" type="java.lang.String">
+    		<column name="imageUrl"/>
+    	</property>
+    	<property name="sex" type="java.lang.String">
+    		<column name="sex"/>
+    	</property>
+    	<property name="phone" type="java.lang.String">
+    		<column name="phone"/>
+    	</property>
+    	<property name="qq" type="java.lang.String">
+    		<column name="qq"/>
+    	</property>
+    	<property name="weibo" type="java.lang.String">
+    		<column name="weibo"/>
+    	</property>
+ 	</class>
+ 	
+ 	<!-- 菜单 -->
+ 	 <class  name="RightMenu" table="rightMenu" dynamic-insert="true" dynamic-update="true">
+ 		<id name="id" type="java.lang.String">
+    			<column name="id"/>
+    			<generator class="assigned"></generator>
+    	</id>
+    	<property name="selfId" type="java.lang.String">
+    		<column name="selfId"/>
+    	</property>
+    	<property name="parentId" type="java.lang.String">
+    		<column name="parentId"/>
+    	</property>
+    	<property name="menuName" type="java.lang.String">
+    		<column name="menuName"/>
+    	</property>
+    	<property name="menuUrl" type="java.lang.String">
+    		<column name="menuUrl"/>
+    	</property>
+    	<property name="imageUrl" type="java.lang.String">
+    		<column name="imageUrl"/>
+    	</property>
+    	<property name="menuType" type="java.lang.String">
+    		<column name="menuType"/>
+    	</property>
+    	<property name="menuMark" type="java.lang.String">
+    		<column name="menuMark"/>
+    	</property>
+ 	</class> 
+ 	
+ 	
+ 	 <!--挑战题目  -->
+ 	<class  name="Challenge" table="challenge" dynamic-insert="true" dynamic-update="true">
+ 		<id name="id" type="java.lang.String">
+    			<column name="id"/>
+    			<generator class="assigned"></generator>
+    	</id>
+    	<property name="selfId" type="java.lang.String">
+    		<column name="selfId"/>
+    	</property>
+    	<property name="parentId" type="java.lang.String">
+    		<column name="parentId"/>
+    	</property>
+    	<property name="creator" type="java.lang.String">
+    		<column name="creator"/>
+    	</property>
+    	<property name="title" type="java.lang.String">
+    		<column name="title"/>
+    	</property>
+    	<property name="createTime" type="java.lang.String">
+    		<column name="createTime"/>
+    	</property>
+    	<property name="modifyTime" type="java.lang.String">
+    		<column name="modifyTime"/>
+    	</property>
+    	<property name="content" type="java.lang.String">
+    		<column name="content"/>
+    	</property>
+    	<property name="answerid" type="java.lang.String">
+    		<column name="answerid"/>
+    	</property>
+    </class>
+    
+ 	<!--题目答案表  -->
+ 	<class  name="ChallengeImg" table="challengeImg" dynamic-insert="true" dynamic-update="true">
+ 		<id name="id" type="java.lang.String">
+    			<column name="id"/>
+    			<generator class="assigned"></generator>
+    	</id>
+    	<property name="challengeId" type="java.lang.String">
+    		<column name="challengeId"/>
+    	</property>
+    	<property name="imageUrl" type="java.lang.String">
+    		<column name="imageUrl"/>
+    	</property>
+    	<property name="flag" type="java.lang.String">
+    		<column name="flag"/>
+    	</property>
+    	<property name="showorder" type="java.lang.String">
+    		<column name="showorder"/>
+    	</property>
+    	<property name="answerdesc" type="java.lang.String">
+    		<column name="answerdesc"/>
+    	</property>
+    	<property name="score" type="java.lang.String">
+    		<column name="score"/>
+    	</property>
+    </class>
+ 	
+   <!-- 找回密碼記錄表 -->
+   <!--  <class name="EmailIdentifyCode" table="emailIdentifyCode" dynamic-insert="true" dynamic-update="true">
+ 		<id name="id" type="java.lang.String">
+    			<column name="id"/>
+    			<generator class="assigned"></generator>
+    	</id>
+    	<property name="email" type="java.lang.String">
+    		<column name="email"/>
+    	</property>
+    	<property name="identifycode" type="java.lang.String">
+    		<column name="identifycode"/>
+    	</property>
+    	<property name="registerDate" type="java.lang.String">
+    		<column name="registerDate"/>
+    	</property>
+    	<property name="isvalid" type="java.lang.String">
+    		<column name="isvalid"/>
+    	</property>
+    	
+    </class> -->
+    <!-- 角色类 -->
+   <!--  <class name="com.nctt.sh.model.system.role.Role" table="role" dynamic-insert="true" dynamic-update="true">
+    	<id name="id" type="java.lang.String">
+    			<column name="id"/>
+    			<generator class="assigned"></generator>
+    	</id>
+    	<property name="roleName" type="java.lang.String">
+    		<column name="roleName"/>
+    	</property>
+    </class> -->
+    <!-- 用户角色 -->
+   <!--  <class name="com.nctt.sh.model.system.role.UserRole" table="userRole" dynamic-update="true" dynamic-insert="true">
+    	<id name="id" type="java.lang.String">
+    		<column name="id"/>
+    		<generator class="assigned"></generator>
+    	</id>
+    	<property name="roleId" type="java.lang.String">
+    		<column name="roleId"/>
+    	</property>
+    	<property name="userId" type="java.lang.String">
+    		<column name="userId"/>
+    	</property>
+    </class> -->
+    <!--角色权限  -->
+    <!-- <class name="com.nctt.sh.model.system.role.RoleRight" table="roleRight" dynamic-update="true" dynamic-insert="true">
+    	<id name="id" type="java.lang.String">
+    		<column name="id"/>
+    		<generator class="assigned"></generator>
+    	</id>
+    	<property name="roleId" type="java.lang.String">
+    		<column name="roleId"/>
+    	</property>
+    	<property name="rightId" type="java.lang.String">
+    		<column name="rightId"/>
+    	</property>
+    </class> -->
+   
+ 	</hibernate-mapping>

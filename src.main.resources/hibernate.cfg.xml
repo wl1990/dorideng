@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+<session-factory>
+	<!-- 显示sql语句的操作 -->  
+  <property name="show_sql">true</property>
+  <!-- 数据库连接池 database connection pool -->
+  <property name="hibernate.proxool.pool_alias">bxspool</property> 
+  <property name="hibernate.proxool.xml">proxoolConf.xml</property>
+  <property name="dialect">org.hibernate.dialect.MySQLDialect</property>
+  <property name="hibernate.proxool.existing_pool">true</property>
+  <property name="hibernate.connection.provider_class">org.hibernate.connection.ProxoolConnectionProvider</property>
+  <property name="hbm2ddl.auto">update</property>
+  <property name="hibernate.current_session_context_class">thread</property><!--基于线程  -->
+   <property name="hibernate.dialect">com.bxs.server.util.CustomDialect</property>
+  <!-- 添加映射文件 -->
+  <mapping resource="/com/bxs/server/model/user.hbm.xml"/>
+  <mapping resource="/com/bxs/server/model/rightmenu.hbm.xml"/>
+  <mapping resource="/com/bxs/server/model/production.hbm.xml"/>
+  <mapping resource="/com/bxs/server/model/productionpicture.hbm.xml"/>
+  <mapping resource="/com/bxs/server/model/recoverpwd.hbm.xml"/>
+</session-factory>
+</hibernate-configuration>

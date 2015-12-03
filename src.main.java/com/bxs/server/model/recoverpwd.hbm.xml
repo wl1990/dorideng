@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+ <hibernate-mapping package="com.bxs.server.model" default-lazy="false">
+ 
+ <!--产品  -->
+ 	<class name="RecoverPwd" table="recoverpwd" dynamic-insert="true" dynamic-update="true">
+ 		<id name="id" type="java.lang.Integer">
+    			<column name="id"/>
+    			<!--Native主键生成方式会根据不同的底层数据库自动选择Identity、Sequence、Hilo主键生成方式  
+       特点：根据不同的底层数据库采用不同的主键生成方式。由于Hibernate会根据底层数据库采用不同的映射方式，因此便于程序移植，项目中如果用到多个数据库时，可以使用这种方式 -->
+				<generator class="native"></generator>
+    	</id>
+    	<property name="email" column="email" type="java.lang.String"></property>
+    	<property name="identifycode" column="identifycode" type="java.lang.String"></property>
+    	<property name="registerDate" column="registerDate" type="java.lang.String"></property>
+    	<property name="isvalid" column="isvalid" type="java.lang.Integer"></property>
+ 	</class>
+ 	</hibernate-mapping>
