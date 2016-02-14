@@ -33,6 +33,7 @@ public class ProductionDaoImpl extends BaseDaoImpl<Production,String> implements
 				HibernateUtil.closeSession();
 			}
 	}
+	
 
 	@Override
 	public boolean deleteBySelfId(String nodeid) {
